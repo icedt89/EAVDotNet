@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9A1C909-F224-45FB-84D7-7AF686680E83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JanHafner.EAVDotNet</RootNamespace>
+    <AssemblyName>JanHafner.EAVDotNet</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Annotations\BaseTypeRequiredAttribute.cs">
+      <Link>Annotations\BaseTypeRequiredAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\CanBeNullAttribute.cs">
+      <Link>Annotations\CanBeNullAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\CollectionAccessAttribute.cs">
+      <Link>Annotations\CollectionAccessAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\CollectionAccessType.cs">
+      <Link>Annotations\CollectionAccessType.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\ImplicitUseKindFlags.cs">
+      <Link>Annotations\ImplicitUseKindFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\ImplicitUseTargetFlags.cs">
+      <Link>Annotations\ImplicitUseTargetFlags.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\InstantHandleAttribute.cs">
+      <Link>Annotations\InstantHandleAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\InvokerParameterNameAttribute.cs">
+      <Link>Annotations\InvokerParameterNameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\ItemCanBeNullAttribute.cs">
+      <Link>Annotations\ItemCanBeNullAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\ItemNotNullAttribute.cs">
+      <Link>Annotations\ItemNotNullAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\LinqTunnelAttribute.cs">
+      <Link>Annotations\LinqTunnelAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\LocalizationRequiredAttribute.cs">
+      <Link>Annotations\LocalizationRequiredAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\MeansImplicitUseAttribute.cs">
+      <Link>Annotations\MeansImplicitUseAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\NotifyPropertyChangedInvocatorAttribute.cs">
+      <Link>Annotations\NotifyPropertyChangedInvocatorAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\NotNullAttribute.cs">
+      <Link>Annotations\NotNullAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\PublicAPIAttribute.cs">
+      <Link>Annotations\PublicAPIAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\PureAttribute.cs">
+      <Link>Annotations\PureAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\RegexPatternAttribute.cs">
+      <Link>Annotations\RegexPatternAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\StringFormatMethodAttribute.cs">
+      <Link>Annotations\StringFormatMethodAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\UsedImplicitlyAttribute.cs">
+      <Link>Annotations\UsedImplicitlyAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Annotations\ValueProviderAttribute.cs">
+      <Link>Annotations\ValueProviderAttribute.cs</Link>
+    </Compile>
+    <Compile Include="Context\DynamicDbContextConfiguration.cs" />
+    <Compile Include="Context\DynamicDbContextFactory.cs" />
+    <Compile Include="Context\IDynamicDbContextFactory.cs" />
+    <Compile Include="Instanciation\ChangeTracking\CollectionRemoveMethodInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\CollectionAddMethodInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\CollectionClearMethodInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\CollectionMethodInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\PrimitivePropertyChangeTrackingInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\PropertyChangeTrackingInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\ComplexPropertyChangeTrackingInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\LazyLoadingComplexPropertyInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\PropertyInterceptor.cs" />
+    <Compile Include="Instanciation\ChangeTracking\PropertyInterceptorSelector.cs" />
+    <Compile Include="Instanciation\ChangeTracking\ProxyableList.cs" />
+    <Compile Include="Query\Expression\Inlining\InlinableExpression.cs" />
+    <Compile Include="Query\Expression\Translation\IQueryableCallTreeTranslator.cs" />
+    <Compile Include="Query\DynamicQueryable.cs" />
+    <Compile Include="Query\DynamicQueryProvider.cs" />
+    <Compile Include="Query\IDynamicQueryable.cs" />
+    <Compile Include="Query\IDynamicQueryProvider.cs" />
+    <Compile Include="Context\DynamicDbContext.cs" />
+    <Compile Include="Context\InstanceRelation\IInstanceRelationStore.cs" />
+    <Compile Include="Context\InstanceRelation\InstanceRelationChangeType.cs" />
+    <Compile Include="Context\InstanceRelation\InstanceRelationStore.cs" />
+    <Compile Include="Context\InstanceRelation\InstanceRelationChangedEventArgs.cs" />
+    <Compile Include="Query\Expression\Inlining\Extensions.cs" />
+    <Compile Include="Query\Expression\Translation\QueryableCallTreeTranslator.cs" />
+    <Compile Include="Query\Expression\DynamicExpressionVisitor.cs" />
+    <Compile Include="Query\INeedYourHelpToImproveException.cs" />
+    <Compile Include="Query\Expression\Inlining\InlinableMethodRewriter.cs" />
+    <Compile Include="Instrumentation\TypeSystem\ITypeAliasWalker.cs" />
+    <Compile Include="Instrumentation\TypeSystem\TypeAliasWalker.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\ByteArrayPropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\EnumPropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\ByteArrayCollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\EnumCollectionItemFactory.cs" />
+    <Compile Include="Query\ResultHandling\IQueryResultHandler.cs" />
+    <Compile Include="Query\ResultHandling\EnumerableQueryResultHandler.cs" />
+    <Compile Include="Query\ResultHandling\IQueryResultHandlerProvider.cs" />
+    <Compile Include="Query\ResultHandling\PrimitiveQueryResultHandler.cs" />
+    <Compile Include="Query\ResultHandling\QueryResultHandlerProvider.cs" />
+    <Compile Include="Query\ResultHandling\ResultHandlerContext.cs" />
+    <Compile Include="Query\ResultHandling\SingleQueryResultHandler.cs" />
+    <Compile Include="Model\Collections\ByteArrayCollectionItem.cs" />
+    <Compile Include="Model\Values\ByteArrayPropertyValue.cs" />
+    <Compile Include="Properties\ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Query\Expression\Translation\LambdaExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\InstanceDescriptorExpressionFactory.cs" />
+    <Compile Include="Query\Expression\Translation\BooleanMemberAccessToBinaryExpressionExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\BooleanPropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\BytePropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\DateTimePropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\ExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\GuidPropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\Int16PropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\Int32PropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\Int64PropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\IsTypeExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\PropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Query\Expression\Translation\StringPropertyValueEqualityExpressionTranslator.cs" />
+    <Compile Include="Model\Identity\MoreThanOneIdentifyingPropertySpecifiedException.cs" />
+    <Compile Include="Model\Identity\IdentitfyingPropertyNotFoundException.cs" />
+    <Compile Include="Instanciation\CollectionPropertyValueResolver.cs" />
+    <Compile Include="Instanciation\TypeResolution\CollectionProxyingInstanciationContext.cs" />
+    <Compile Include="Instanciation\TypeResolution\DefaultTypeInstanciationContext.cs" />
+    <Compile Include="Instanciation\TypeResolution\TypeInstanciator.cs" />
+    <Compile Include="Instanciation\IInstanceResolutionWalker.cs" />
+    <Compile Include="Instanciation\InstancePropertyValueResolver.cs" />
+    <Compile Include="Instanciation\InstanceResolutionContext.cs" />
+    <Compile Include="Instanciation\InstanceResolutionWalker.cs" />
+    <Compile Include="Instanciation\IPropertyValueResolver.cs" />
+    <Compile Include="Instanciation\TypeResolution\InstanceProxyingInstanciationContext.cs" />
+    <Compile Include="Instanciation\TypeResolution\ITypeInstanciationContext.cs" />
+    <Compile Include="Instanciation\TypeResolution\ITypeInstanciator.cs" />
+    <Compile Include="Instanciation\PrimitivePropertyValueResolver.cs" />
+    <Compile Include="Instanciation\PropertyValueResolvationContext.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Context\IDynamicDbContext.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\BytePropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\ByteCollectionItemFactory.cs" />
+    <Compile Include="Classification\MethodClassifier.cs" />
+    <Compile Include="Context\Adapter\DynamicDbContextAdapter.cs" />
+    <Compile Include="Context\Adapter\DynamicDbSetAdapter.cs" />
+    <Compile Include="Context\Adapter\IDynamicDbSetAdapter.cs" />
+    <Compile Include="Model\Collections\IgnorableCollectionItem.cs" />
+    <Compile Include="Model\Collections\BooleanCollectionItem.cs" />
+    <Compile Include="Model\Collections\CollectionItem.cs" />
+    <Compile Include="Model\Collections\ByteCollectionItem.cs" />
+    <Compile Include="Model\ValueHandling\DefaultPropertyValueHandler.cs" />
+    <Compile Include="Model\ValueHandling\IPropertyValueHandler.cs" />
+    <Compile Include="Model\ValueHandling\IPropertyValueHandlerFactory.cs" />
+    <Compile Include="Model\ValueHandling\KeyRelatingPropertyValueHandler.cs" />
+    <Compile Include="Model\ValueHandling\PropertyValueHandlerFactory.cs" />
+    <Compile Include="Model\Values\CollectionPropertyAssociation.cs" />
+    <Compile Include="Model\Collections\DateTimeCollectionItem.cs" />
+    <Compile Include="Model\Collections\GuidCollectionItem.cs" />
+    <Compile Include="Model\Collections\InstanceCollectionItemAssociation.cs" />
+    <Compile Include="Model\Collections\Int16CollectionItem.cs" />
+    <Compile Include="Model\Collections\Int32CollectionItem.cs" />
+    <Compile Include="Model\Collections\Int64CollectionItem.cs" />
+    <Compile Include="Model\Collections\StringCollectionItem.cs" />
+    <Compile Include="Model\IgnorablePropertyValue.cs" />
+    <Compile Include="Model\InstanceDescriptor.cs" />
+    <Compile Include="Model\IValueAssociation.cs" />
+    <Compile Include="Model\IPrimitiveValueAssociation.cs" />
+    <Compile Include="Model\PropertyValue.cs" />
+    <Compile Include="Model\Values\BooleanPropertyValue.cs" />
+    <Compile Include="Model\Values\DateTimePropertyValue.cs" />
+    <Compile Include="Model\Values\GuidPropertyValue.cs" />
+    <Compile Include="Model\IInstanceValueAssociation.cs" />
+    <Compile Include="Model\Values\InstancePropertyAssociation.cs" />
+    <Compile Include="Model\Values\BytePropertyValue.cs" />
+    <Compile Include="Model\Values\Int16PropertyValue.cs" />
+    <Compile Include="Model\Values\Int32PropertyValue.cs" />
+    <Compile Include="Model\Values\Int64PropertyValue.cs" />
+    <Compile Include="Model\Values\StringPropertyValue.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\CollectionItemCreationContext.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\IInstanceDescriptorFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\InstanceDescriptorCreationContext.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\InstanceDescriptorFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueCreationContext.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\BooleanPropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\CollectionPropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\BooleanCollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\CollectionItemFactoryProvider.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\DateTimeCollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\GuidCollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\ICollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\ICollectionItemFactoryProvider.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\InstanceCollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\Int16CollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\Int32CollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\Int64CollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Collection\StringCollectionItemFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\DateTimeValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\GuidPropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\InstancePropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Int16PropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Int32PropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\Int64PropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\IPropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\IPropertyValueFactoryProvider.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\PropertyValueFactory.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\PropertyValueFactoryProvider.cs" />
+    <Compile Include="Instrumentation\InstanceSystem\PropertyValueFactories\StringPropertyValueFactory.cs" />
+    <Compile Include="NoTypeDescriptorAliasAttribute.cs" />
+    <Compile Include="Model\Identity\ObjectIdentityExtensions.cs" />
+    <Compile Include="Classification\PropertyClassifier.cs" />
+    <Compile Include="Instrumentation\TypeSystem\DefaultPropertyInfoReflector.cs" />
+    <Compile Include="TypeWalker.cs" />
+    <Compile Include="Classification\TypeClassifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\TypeAlias.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JanHafner.Toolkit.Common, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\JanHafner.Toolkit.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.10\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Context" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
