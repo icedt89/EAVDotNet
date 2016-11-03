@@ -4,7 +4,10 @@ More or less dynamic implementation of the [Entity-attribute-value model](https:
 
 ## Info
 
-This project is no longer actively maintained by me. Feel free to fork, bugfix, extend, use or whatever.
+This project is no longer actively maintained by me!  
+Some features may be incomplete and/or buggy.  
+
+Feel free to fork, bugfix, extend and use it.
 
 ## Features
 
@@ -19,8 +22,8 @@ This project is no longer actively maintained by me. Feel free to fork, bugfix, 
 ## Issues
 
 + poor performance
-+ buggy IQueryable translation/rewriting
-+ maybe more... i dont remember :-O...
++ buggy/incomplete IQueryable translation/rewriting
++ maybe more... i dont remember :-O
 
 ## License
 
